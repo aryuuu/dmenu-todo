@@ -5,7 +5,7 @@ todofile=""
 # DMENU INTERFACE 
 function add()
 {
-	echo "" | dmenu -b -i -p "Add task: " | tr -d '\n' |  xargs -0 todo add
+	echo "" | dmenu -b -i -p "Add task: " | tr -d '\n' |  xargs -0 bash $0 add
 }
 
 function display()
@@ -19,7 +19,7 @@ function display()
 
 function delete()
 {
-	 echo "$1" | awk '{print $1;}' | tr -d '.' | xargs todo del; display
+	 echo "$1" | awk '{print $1;}' | tr -d '.' | xargs bash $0 del; display
 }
 
 function dmenu_main()
