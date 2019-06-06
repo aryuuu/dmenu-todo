@@ -33,7 +33,7 @@ function dmenu_main()
 	esac
 }
 
-# MAIN LOGIC	
+# COMMAND LINE INTERFACE	
 case $1 in
 	add) shift 1; [ -z "$1" ] || for t in "$@"; do echo "$t" >> $todofile;done;;
 	del) shift 1; [ -z "$1" ] || sed "$1d" $todofile > /tmp/t; cat /tmp/t > $todofile; rm /tmp/t ;;
