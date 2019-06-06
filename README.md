@@ -5,7 +5,7 @@
 ## Installation
 
 Place script somewhere. Point *todofile* variable in script to an empty file in your
-system. Now you can create a symbolic link to your script to /usr/bin.
+system. Now you can create a symbolic link to your script or add alias to *.bashrc*
 
 ## Dependecies
 
