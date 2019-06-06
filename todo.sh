@@ -10,7 +10,7 @@ function add()
 
 function display()
 {
-	 todo | dmenu -b -l $lines | while read task; do \
+	 bash $0 | dmenu -b -l $lines | while read task; do \
 		echo -e "Yes\nNo" | dmenu -i -b -p "Delete?" | while read opt; do \
 			[ "$opt" == "Yes" ] && delete "$task"; \
 				done; done
