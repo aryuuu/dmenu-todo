@@ -23,6 +23,8 @@ system. Now you can create a symbolic link to your script or add alias to *.bash
 
 Dmenu interface is useful with your favourite window manager. For example in i3 you could add `bindsym $mod+t exec todo dmenu`.
 
+### Options 
+
 ```
         ||N tasks|| |Add| |Display|
 ```
