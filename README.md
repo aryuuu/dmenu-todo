@@ -16,7 +16,7 @@ system. Now you can create a symbolic link to your script or add alias to *.bash
 ## Command line interface
 
 `todo` - display numbered todofile  
-`todo add task1 task2 ... taskN` - add tasks to todofile  
+`todo add "task1" "task2" ... "taskN"` - add tasks to todofile  
 `todo del N` - delete N task  
 `todo dmenu` - bring up dmenu interface  
 
