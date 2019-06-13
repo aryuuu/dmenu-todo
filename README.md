@@ -12,6 +12,7 @@ system. Now you can create a symbolic link to your script or add alias to *.bash
 + awk, sed
 + xargs
 + dmenu
++ bash
 
 ## Command line interface
 
