@@ -42,5 +42,3 @@ case $1 in
 	dmenu-display) display;;
 	*) awk '{print NR ". " $s}' $todofile;;
 esac
-
-
