@@ -15,10 +15,6 @@ function display()
          echo -en "Delete\nMark as doing" | dmenu -i -fn "FontAwesome" -l 5 -sb '#6272A4' -sf '#F8F8F2' -nb '#282A36' -nf '#F8F8F2' -p "Action" | while read action; do \
              if [[ $action == "Delete" ]]; then delete "$task"; elif [[ $action == "Mark as doing" ]]; then doing "$task"; else echo "huh"; fi; \
              done; done
-
-		# echo -e "Yes\nNo" | dmenu -i -fn "FontAwesome" -l 5 -sb '#6272A4' -sf '#F8F8F2' -nb '#282A36' -nf '#F8F8F2' -p "Delete?" | while read opt; do \
-		# 	[ "$opt" == "Yes" ] && delete "$task"; \
-		# 		done; done
 }
 
 function doing() 
