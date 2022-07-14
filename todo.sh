@@ -6,13 +6,13 @@ doingfile="/home/fatt/.doing"
 # DMENU INTERFACE 
 function add()
 {
-	echo "" | dmenu -i -fn "FontAwesome" -p  -l 5 -sb '#6272A4' -sf '#F8F8F2' -nb '#282A36' -nf '#F8F8F2' | tr -d '\n' |  xargs -0 bash $0 add
+	echo "" | dmenu -i -fn "FontAwesome" -p  -l 5 -sb '#6272A4' -sf '#F8F8F2' -nb '#282A36' -nf '#F8F8F2' -shb '#6272A4' -shf '#FA485D' -nhb '#282A36' -nhf '#FA485D' | tr -d '\n' |  xargs -0 bash $0 add
 }
 
 function display()
 {
-	 bash $0 | dmenu -fn "FontAwesome" -p  -sb '#6272A4' -sf '#F8F8F2' -nb '#282A36' -nf '#F8F8F2' -l $lines | while read task; do \
-         echo -en "Delete\nMark as doing" | dmenu -i -fn "FontAwesome" -l 5 -sb '#6272A4' -sf '#F8F8F2' -nb '#282A36' -nf '#F8F8F2' -p "Action" | while read action; do \
+	 bash $0 | dmenu -fn "FontAwesome" -p  -sb '#6272A4' -sf '#F8F8F2' -nb '#282A36' -nf '#F8F8F2' -shb '#6272A4' -shf '#FA485D' -nhb '#282A36' -nhf '#FA485D' -l $lines | while read task; do \
+         echo -en "Delete\nMark as doing" | dmenu -i -fn "FontAwesome" -l 5 -sb '#6272A4' -sf '#F8F8F2' -nb '#282A36' -nf '#F8F8F2' -shb '#6272A4' -shf '#FA485D' -nhb '#282A36' -nhf '#FA485D' -p "Action" | while read action; do \
              if [[ $action == "Delete" ]]; then delete "$task"; elif [[ $action == "Mark as doing" ]]; then doing "$task"; else echo "huh"; fi; \
              done; done
 }
@@ -38,7 +38,7 @@ function delete()
 function dmenu_main()
 {
 	lines=$(wc -l <$todofile | tr -d '\n')
-	option=$(echo -e "Add\nDisplay\n" | dmenu -i -fn "FontAwesome" -l 5 -sb '#6272A4' -sf '#F8F8F2' -nb '#282A36' -nf '#F8F8F2' -p "$lines tasks")
+	option=$(echo -e "Add\nDisplay\n" | dmenu -i -fn "FontAwesome" -l 5 -sb '#6272A4' -sf '#F8F8F2' -nb '#282A36' -nf '#F8F8F2' -shb '#6272A4' -shf '#FA485D' -nhb '#282A36' -nhf '#FA485D' -p "$lines tasks")
 
 	case $option in 
 		"Add") add;;
