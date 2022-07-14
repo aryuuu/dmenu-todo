@@ -20,7 +20,7 @@ function display()
 function doing() 
 {
     task=$(echo -n "$1" | choose 1:) 
-    notify-send "working on $task"
+    notify-send "In Progress" "$task"
     echo "$task" > $doingfile
 }
 
