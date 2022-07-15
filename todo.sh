@@ -7,6 +7,7 @@ doingfile="/home/fatt/.doing"
 function add()
 {
 	echo "" | dmenu -i -fn "FontAwesome" -p  -l 5 -sb '#6272A4' -sf '#F8F8F2' -nb '#282A36' -nf '#F8F8F2' -shb '#6272A4' -shf '#FA485D' -nhb '#282A36' -nhf '#FA485D' | tr -d '\n' |  xargs -0 bash $0 add
+    dmenu_main
 }
 
 function display()
@@ -32,7 +33,7 @@ function delete()
         > $doingfile
     fi
 
-	 echo "$1" | awk '{print $1;}' | tr -d '.' | xargs bash $0 del; display
+    echo "$1" | awk '{print $1;}' | tr -d '.' | xargs bash $0 del; display
 }
 
 function dmenu_main()
